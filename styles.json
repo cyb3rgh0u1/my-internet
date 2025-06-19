@@ -1505,7 +1505,7 @@
       "no footer": "footer{\n  display: none !important;\n}"
     },
     "medium.com.css": {
-      "medium-transparency": ".c, a, h1, h2, h3, h4, h5, h6, span, p{\nbackground-color: transparent;\n--toastify-toast-background: transparent !important;\ncolor: light-dark(#000, #fff) !important;\ntransition:\nbackground-color 0.5s ease-in-out, background 0.5s ease-in-out, border 0.5s ease-in-out, box-shadow 0.5s ease-in-out !important;\n}\n.ex, .ae{\nborder: none !important;\n}\n}", 
+      "medium-transparency": ".c, a, h1, h2, h3, h4, h5, h6, span, p{\nbackground-color: var(--dynamic-hyprverse) !important;\ncolor: light-dark(#000, #fff) !important;\ntransition:\nbackground-color 0.5s ease-in-out, background 0.5s ease-in-out, border 0.5s ease-in-out, box-shadow 0.5s ease-in-out !important;\n}\n.ex, .ae{\nborder: none !important;\n}", 
       "medium-darkreader": ":root{\n  --darkreader-background-ffffff: var(--dynamic-hyprverse) !important;\n}"
     },
     "meet.google.com.css": {
