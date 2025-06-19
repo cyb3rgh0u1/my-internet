@@ -9,6 +9,85 @@ body,
   transition: background-color 0.5s ease-in-out, background 0.5s ease-in-out,
     border 0.5s ease-in-out, box-shadow 0.5s ease-in-out !important;
 }
+/* Enhanced glass effect for grok.com message bubble */
+.group.relative > .message-bubble {
+/* Explicit text color for readability */
+  color: var(--text-primary, light-dark(#000, #fff)) !important; /* Fallback to black/white for contrast */
+}
+/* Force override of default background */
+.group.relative > .message-bubble.bg-surface-l2 {
+  background: none !important; /* Remove original background */
+}
+   
+ /* Glassmorphism effect for query bar */
+  .query-bar.group {
+    /* Base styles with Tailwind-like utilities */
+    @apply rounded-3xl px-2 pb-12 max-w-[51rem] w-full relative transition-all duration-100;
+    background: light-dark(rgba(255, 246, 246, 0.3), rgba(30, 30, 30, 0.3)) !important; /* Theme-aware semi-transparent background */     
+    backdrop-filter: blur(18px); /* Enhanced blur for smoother glass effect */
+    border: 1px solid var(--border-l1, rgba(255, 255, 255, 0.15)); /* Subtle border */
+    box-shadow: 
+      light-dark(
+        rgba(255, 255, 255, 0.15), 
+        rgba(0, 0, 0, 0.15)
+      ) 0px -36px 30px 0px inset,
+      rgba(0, 0, 0, 0.05) 0px 2px 1px,
+      rgba(0, 0, 0, 0.07) 0px 4px 2px,
+      rgba(0, 0, 0, 0.07) 0px 8px 4px,
+      rgba(0, 0, 0, 0.07) 0px 16px 8px,
+      rgba(0, 0, 0, 0.07) 0px 32px 16px; /* Refined shadow for depth */
+
+    /* Hover and focus states */
+    &:hover,
+    &.focus-within {
+      border-color: var(--border-l2, rgba(255, 255, 255, 0.25)); /* Slightly brighter border */
+      box-shadow: 
+        light-dark(
+          rgba(255, 255, 255, 0.25), 
+          rgba(0, 0, 0, 0.25)
+        ) 0px -36px 30px 0px inset,
+        rgba(0, 0, 0, 0.09) 0px 4px 2px,
+        rgba(0, 0, 0, 0.1) 0px 8px 4px,
+        rgba(0, 0, 0, 0.1) 0px 16px 8px; /* Enhanced shadow for interaction */
+    }
+  }
+
+  /* Ensure container handles overflow */
+  .overflow-hidden {
+    overflow: hidden !important;
+  }
+
+
+  /* Remove redundant shadows for cleaner effect */
+  .query-bar.group > .shadow-black\/5,
+  .query-bar.group > .shadow {
+    box-shadow: none !important;
+  }
+    
+ /* Experimental glass effect on button (overrides radial reveal) */
+.aspect-square.h-10.rounded-full.relative {
+  background: rgba(0, 0, 0, .25) !important; /* Glass background */
+  backdrop-filter: blur(16px); /* Glass blur */
+  box-shadow: 
+    light-dark(rgba(255, 255, 255, .2), rgba(0, 0, 0, 0.2)) 0px -10px 8px 0px inset,
+    rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px; /* Scaled-down shadow for small button */
+  border: 1px solid var(--border-l1, rgba(255, 255, 255, 0.2)); /* Border */
+  transition: all 0.1s ease-in-out; /* Retain duration-100 */
+
+  /* Disable radial reveal pseudo-element */
+  &::before {
+    display: none !important;
+  }
+
+  /* Hover state */
+  &:hover {
+    border-color: var(--border-l2, rgba(255, 255, 255, 0.3));
+    box-shadow: 
+      light-dark(rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.3)) 0px -10px 8px 0px inset,
+      rgba(0, 0, 0, 0.1) 0px 4px 2px;
+  }
+}
 
 /* grok-hover */
 .top-0,
